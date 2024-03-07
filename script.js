@@ -1,104 +1,104 @@
-// const pets = ["dog", "chicken", "cat", "dog", "chicken", "chicken", "rabbit"];
+const pets = ["dog", "chicken", "cat", "dog", "chicken", "chicken", "rabbit"];
 
-// var petCounts = pets.reduce(function (result, pet) {
-//   if (!result[pet]) {
-//     result[pet] = 1;
-//   } else {
-//     result[pet] = result[pet] + 1;
-//   }
+var petCounts = pets.reduce(function (result, pet) {
+  if (!result[pet]) {
+    result[pet] = 1;
+  } else {
+    result[pet] = result[pet] + 1;
+  }
 
-//   return result;
-// }, {});
+  return result;
+}, {});
 
-// console.log(petCounts);
+console.log(petCounts);
 
-// const newArray = [...pets];
-// console.log(newArray);
+const newArray = [...pets];
+console.log(newArray);
 
-// newArray.push("fish");
+newArray.push("fish");
 
-// console.log(newArray);
-// console.log(pets);
+console.log(newArray);
+console.log(pets);
 
-// // let and const hoisting check ( let & const e hoisting hoina )
+// let and const hoisting check ( let & const e hoisting hoina )
 
-// function newFunc() {
-//   console.log(a); // Uncaught ReferenceError: Cannot access 'a' before initialization
-//   const a = 1;
-//   console.log(a);
-// }
+function newFunc() {
+  console.log(a); // Uncaught ReferenceError: Cannot access 'a' before initialization
+  const a = 1;
+  console.log(a);
+}
 
-// // newFunc();
+// newFunc();
 
-// // window te this keyword (window == this) eki kotha
+// window te this keyword (window == this) eki kotha
 
-// // microTasking and event loop visualization
+// microTasking and event loop visualization
 
-// console.log("Start");
+console.log("Start");
 
-// setTimeout(function () {
-//   console.log("Timeout 0!");
-// }, 0);
+setTimeout(function () {
+  console.log("Timeout 0!");
+}, 0);
 
-// Promise.resolve("Promise Resolved Called").then((res) => {
-//   console.log(res);
-// });
+Promise.resolve("Promise Resolved Called").then((res) => {
+  console.log(res);
+});
 
-// console.log("End now");
+console.log("End now");
 
-// // ==== Output ====
-// /*
-//  Start !
-//  End Now!
-//  Promise Resolved Called
-//  Timeout 0!
-//  */
+// ==== Output ====
+/*
+ Start !
+ End Now!
+ Promise Resolved Called
+ Timeout 0!
+ */
 
-// // Asyc and await
+// Asyc and await
 
-// const one = () => Promise.resolve("One!");
+const one = () => Promise.resolve("One!");
 
-// async function myFunc() {
-//   console.log("in function!");
-//   const res = await one(); // await keyword asle async function suspend hoi, then bakisob mircrotask hisebe execute hoi.
-//   console.log(res);
-// }
+async function myFunc() {
+  console.log("in function!");
+  const res = await one(); // await keyword asle async function suspend hoi, then bakisob mircrotask hisebe execute hoi.
+  console.log(res);
+}
 
-// console.log("Before function!");
-// myFunc();
-// console.log("After function!");
+console.log("Before function!");
+myFunc();
+console.log("After function!");
 
-// // ==== Output ====
-// /*
-//  Before function
-//  in function!
-//  After function!
-//  One!
-//  */
+// ==== Output ====
+/*
+ Before function
+ in function!
+ After function!
+ One!
+ */
 
-// // Synchronous programming problem visualization
+// Synchronous programming problem visualization
 
-// function someLongRunningFunction() {
-//   let start = Date.now();
-//   while (Date.now() - start < 5000) {
-//     // do nothing
-//   }
-//   return "Hello";
-// }
+function someLongRunningFunction() {
+  let start = Date.now();
+  while (Date.now() - start < 5000) {
+    // do nothing
+  }
+  return "Hello";
+}
 
-// console.log("Starting...");
+console.log("Starting...");
 
-// let result = someLongRunningFunction();
-// console.log(result);
+let result = someLongRunningFunction();
+console.log(result);
 
-// console.log("...Finishing");
+console.log("...Finishing");
 
-// // ==== Output ====
-// /*
-//   Starting...
-//   Hello  [ but taking long time in running, like 5 sec]- this is the problem
-// ...Finishing
-// */
+// ==== Output ====
+/*
+  Starting...
+  Hello  [ but taking long time in running, like 5 sec]- this is the problem
+...Finishing
+*/
 
 //  Promise visualization
 
